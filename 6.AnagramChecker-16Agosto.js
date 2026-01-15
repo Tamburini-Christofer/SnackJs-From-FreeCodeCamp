@@ -24,8 +24,6 @@ console.log(areAnagrams("listen", "silent"))
 
 //* Non è stata utilizzata Chat
 
-//todo Considerazioni: 
-
 //* Logica corretta per gli anagrammi
 
 //* Normalizzi il case
