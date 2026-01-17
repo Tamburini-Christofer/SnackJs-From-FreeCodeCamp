@@ -52,28 +52,26 @@ console.log(decode("Xlmw mw e wigvix qiwweki.", 4));
 
 //?Codice scritto da ChatGpt
 function decode(message, shift) {
-  let result = "";
+  return message
+    .split("") //! Ok, prima li ha splittati in un array, così da poterli mappare
+    .map(c => { //! Poi li ha mappati
+      const code = c.charCodeAt(0);
 
-  for (let i = 0; i < message.length; i++) {
-    const char = message[i];
-    const code = message.charCodeAt(i);
+      // Maiuscole A-Z
+      if (code >= 65 && code <= 90)
+        return String.fromCharCode(((code - 65 - shift + 26) % 26) + 65); //! Qui aggiungereun "grazie al cazzo". Non sapevo che le maiuscole
+    //!andavano da 65 e 90, stessa cosa per le minuscole
 
-    // A-Z
-    if (code >= 65 && code <= 90) {
-      result += String.fromCharCode(code + shift);
-    }
-    // a-z
-    else if (code >= 97 && code <= 122) {
-      result += String.fromCharCode(code + shift);
-    }
-    // altri caratteri
-    else {
-      result += char;
-    }
-  }
+      // Minuscole a-z
+      if (code >= 97 && code <= 122)
+        return String.fromCharCode(((code - 97 - shift + 26) % 26) + 97);
 
-  return result;
+      // Altri caratteri
+      return c;
+    })
+    .join("");
 }
+
 
 //* Hai capito l’uso di charCodeAt / fromCharCode
 
@@ -88,25 +86,6 @@ function decode(message, shift) {
 //! Decodifica anche caratteri non alfabetici
 
 //? Versione Chat Gpt 
-
-function decode(message, shift) {
-  let res = "";
-
-  for (let i = 0; i < message.length; i++) {
-    const c = message.charCodeAt(i);
-
-    if (c >= 65 && c <= 90) {
-      res += String.fromCharCode(c + shift);
-    } else if (c >= 97 && c <= 122) {
-      res += String.fromCharCode(c + shift);
-    } else {
-      res += message[i];
-    }
-  }
-
-  return res;
-}
-
 
 //todo Considerazioni: 
 
