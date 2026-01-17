@@ -17,7 +17,7 @@
 //! "È stato un pareggio" se entrambi gli eserciti hanno vinto lo stesso numero di battaglie.
 
 //? Tempo di esecuzione:
-//* Non finito
+//* Non completato
 
 //?Codice scritto senza utilizzo di ChatGpt
 function battle(myArmy, opposingArmy) {
