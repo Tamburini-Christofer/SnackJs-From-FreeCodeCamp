@@ -24,14 +24,17 @@ console.log(isPangram("hello", "helo"))
 //?Codice scritto da ChatGpt
 
 function isPangram(sentence, letters) {
-  const sentenceLow = sentence.toLowerCase();
+  const allowed = new Set(letters.toLowerCase());
+  const used = new Set();
 
-  for (let char of letters.toLowerCase()) {
-    if (!sentenceLow.includes(char)) {
-      return false;
-    }
+  for (let char of sentence.toLowerCase()) {
+    if (char < "a" || char > "z") continue;
+
+    if (!allowed.has(char)) return false;
+    used.add(char);
   }
-  return true;
+
+  return allowed.size === used.size;
 }
 
 console.log(isPangram("hello", "helo")); 
