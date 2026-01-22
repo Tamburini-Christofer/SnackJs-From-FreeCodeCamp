@@ -56,6 +56,18 @@ console.log(numberOfFiles(4096, "B", 1.5))
 
 //? Versione Chat Gpt 
 
+function numberOfFiles(fileSize, fileUnit, driveSizeGb) {
+  const units = {
+    B: 1,
+    KB: 1000,
+    MB: 1000 ** 2,
+    GB: 1000 ** 3
+  };
+
+  return Math.floor((driveSizeGb * units.GB) / (fileSize * units[fileUnit]));
+}
+
+
 //todo Considerazioni: 
 
 //! N.B.
