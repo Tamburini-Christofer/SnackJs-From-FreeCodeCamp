@@ -1,7 +1,5 @@
 //todo Data una stringa di undici cifre, restituisci la stringa come numero di telefono in questo formato: "+D (DDD) DDD-DDDD".
 
-//!
-
 //? Tempo di esecuzione:
 //* 5 Minuti e 40 secondi
 
