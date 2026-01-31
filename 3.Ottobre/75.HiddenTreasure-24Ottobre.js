@@ -51,13 +51,19 @@ function dive(map, coordinates) {
 
   if (cell === "-") return "Empty";
 
-  // controlla se esistono ancora parti non trovate
-  const hasUnfound = map.some(r => r.includes("O"));
+  // conta le parti NON trovate, escludendo la cella colpita
+  let remainingO = 0;
 
-  if (cell === "O" && hasUnfound) return "Found";
-  if (cell === "O" && !hasUnfound) return "Recovered";
+  for (let r = 0; r < map.length; r++) {
+    for (let c = 0; c < map[r].length; c++) {
+      if (!(r === row && c === col) && map[r][c] === "O") {
+        remainingO++;
+      }
+    }
+  }
 
-  return "Found"; // se colpisci "X"
+  if (cell === "O" && remainingO === 0) return "Recovered";
+  return "Found";
 }
 
 //* ✅ Pro
