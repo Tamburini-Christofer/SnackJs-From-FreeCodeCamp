@@ -64,11 +64,16 @@ function verify(message, key, signature) {
   }
 
   let tot = totStringa + totStringaKey;
-  return tot === signature ? true : tot;
+  return tot === signature;
 }
 
-console.log(verify("foo", "bar", 57)); // true
-console.log(verify("foo", "bar", 50)); // 57
+console.log(verify("foo", "bar", 57));           // true
+console.log(verify("foo", "bar", 54));           // false
+console.log(verify("freeCodeCamp", "Rocks", 238)); // true
+console.log(verify("Is this valid?", "No", 210));  // false
+console.log(verify("Is this valid?", "Yes", 233)); // true
+console.log(verify("Check out the freeCodeCamp podcast,", "in the mobile app", 514)); // true
+
 
 //*
 
