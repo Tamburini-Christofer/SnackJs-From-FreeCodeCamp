@@ -59,25 +59,45 @@ console.log(findWord([["a", "c", "t"], ["t", "a", "t"], ["c", "t", "c"]], "cat")
 //* Codice scritto da ChatGpt
 
 function findWord(matrix, word) {
+  const dirs = [
+    [0, 1], [1, 0], [0, -1], [-1, 0], // →
+    [1, 1], [1, -1], [-1, 1], [-1, -1] // diagonali
+  ];
+
   const rows = matrix.length;
   const cols = matrix[0].length;
 
-  // Orizzontale
-  for (let i = 0; i < rows; i++) {
-    if (matrix[i].join("").includes(word)) return true;
-  }
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (matrix[r][c] !== word[0]) continue;
 
-  // Verticale
-  for (let c = 0; c < cols; c++) {
-    let colWord = "";
-    for (let r = 0; r < rows; r++) {
-      colWord += matrix[r][c];
+      for (let [dr, dc] of dirs) {
+        let i = 0;
+        let nr = r;
+        let nc = c;
+
+        while (
+          i < word.length &&
+          nr >= 0 && nc >= 0 &&
+          nr < rows && nc < cols &&
+          matrix[nr][nc] === word[i]
+        ) {
+          nr += dr;
+          nc += dc;
+          i++;
+        }
+
+        if (i === word.length) {
+          return [
+            [r, c],
+            [nr - dr, nc - dc]
+          ];
+        }
+      }
     }
-    if (colWord.includes(word)) return true;
   }
-
-  return false;
 }
+
 
 console.log(
   findWord(
