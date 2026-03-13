@@ -10,7 +10,6 @@
 //* Tempo di esecuzione:
 //* 9 Minuti e 40 secondi
 //*
-
 //*Codice scritto senza utilizzo di ChatGpt
 function vowelCase(str) {
   
@@ -62,3 +61,15 @@ console.log(vowelCase("HEAD~1")); // hEAd~1
 
 //prompt completo Chat 
 // Da ora in poi farò degli snack. Ti darà una consegna e tu dovrai analizzare la consegna, analizzare il mio codice, darmi una valutazione da 1 a 10 e dirmi i pro e i contro, poi il codice corretto
+
+
+async function fetchFunction () {
+  try{
+  const data = await fetch(url)
+  const dataRes = await data.json()
+  }
+  catch{
+
+  }
+
+}
