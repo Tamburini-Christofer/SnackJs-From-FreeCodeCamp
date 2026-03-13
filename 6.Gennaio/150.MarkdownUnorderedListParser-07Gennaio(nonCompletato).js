@@ -23,7 +23,7 @@
 //*
 
 //todo Valutazione al codice proposta da ChatGpt
-//* Voto 
+// * Voto 
 //todo
 
 //* Pro e contro del mio codice
