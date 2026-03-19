@@ -17,7 +17,7 @@
 // Qui si mette il codice ChatGpt
 //*
 
-//todo Valutazione al codice proposta da ChatGpt
+//todo Valutazione al MIO codice proposta da ChatGpt
 //* Voto 
 //todo
 
