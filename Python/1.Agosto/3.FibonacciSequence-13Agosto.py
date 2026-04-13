@@ -62,20 +62,20 @@
 # ==========================================
 
 def fibonacci_sequence(start_sequence, length):
-
-    # ! caso speciale
     if length == 0:
         return []
 
-    # ! copia lista iniziale
-    seq = start_sequence.copy()
+    copy_list = start_sequence.copy()
 
-    # ! continua finché non raggiungi la lunghezza
-    while len(seq) < length:
-        prossimo = seq[-1] + seq[-2]
-        seq.append(prossimo)
+    # ! FIX IMPORTANTE
+    if length < len(copy_list):
+        return copy_list[:length]
 
-    return seq
+    while len(copy_list) < length:
+        value = copy_list[-1] + copy_list[-2]
+        copy_list.append(value)
+    
+    return copy_list
 
 
 # ==========================================
