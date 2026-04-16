@@ -47,14 +47,17 @@ function doMath(str) {
 function doMath(str) {
   let numbers = [];
   let separators = [];
-  
   let currentNum = "";
   let currentSep = "";
 
   for (let i = 0; i < str.length; i++) {
     if (/\d/.test(str[i])) {
+      // Se troviamo un numero e avevamo accumulato lettere...
       if (currentSep.length > 0) {
-        separators.push(currentSep.length);
+        // AGGIUNTA CRUCIALE: Salva il separatore solo se abbiamo già almeno un numero
+        if (numbers.length > 0) {
+          separators.push(currentSep);
+        }
         currentSep = "";
       }
       currentNum += str[i];
@@ -67,17 +70,26 @@ function doMath(str) {
     }
   }
 
+  // Aggiungiamo l'ultimo numero se rimasto in sospeso
   if (currentNum.length > 0) {
     numbers.push(Number(currentNum));
   }
 
+  // Se non ci sono numeri, ritorna 0 o gestisci l'errore
+  if (numbers.length === 0) return 0;
+
   let result = numbers[0];
 
   for (let i = 1; i < numbers.length; i++) {
-    if (separators[i - 1] % 2 === 0) {
+    let sep = separators[i - 1];
+
+    if (/plus/i.test(sep)) {
       result += numbers[i];
-    } else {
+    } else if (/minus/i.test(sep)) {
       result -= numbers[i];
+    } else {
+      if (sep.length % 2 === 0) result += numbers[i];
+      else result -= numbers[i];
     }
   }
 
