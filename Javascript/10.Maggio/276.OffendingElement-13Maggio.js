@@ -18,18 +18,21 @@
 
 //* Codice scritto da ChatGpt
 
-function findOutOfPlaceIndex(arr) {
+function findOffender(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
+
     if (arr[i] > arr[i + 1]) {
-      return i;
+
+      if (i === 0 || arr[i + 1] >= arr[i - 1]) {
+        return i;
+      }
+      
+      return i + 1;
     }
   }
-  
+
   return -1;
 }
-
-// Esempio:
-// findOutOfPlaceIndex([1, 2, 3, 7, 5, 6, 8]) → 3
 
 //*
 
