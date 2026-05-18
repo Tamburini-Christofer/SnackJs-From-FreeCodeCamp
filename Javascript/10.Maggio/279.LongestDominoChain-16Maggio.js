@@ -56,7 +56,7 @@ console.log(getLongestChain([[1, 2], [4, 5], [2, 3]]));
 
 //* Codice scritto da ChatGpt
 
-function getLongestChainGPT(dominoes) {
+function getLongestChain(dominoes) {
 
   let longest = [];
 
@@ -69,51 +69,42 @@ function getLongestChainGPT(dominoes) {
     for (let i = 0; i < remaining.length; i++) {
 
       const [a, b] = remaining[i];
-      const last = chain[chain.length - 1];
+      const nextRemaining = remaining.filter((_, idx) => idx !== i);
 
-      // Se la chain è vuota aggiungo qualsiasi domino
+      // Se la catena è vuota
       if (chain.length === 0) {
 
-        backtrack(
-          [[a, b]],
-          remaining.filter((_, index) => index !== i)
-        );
+        backtrack([[a, b]], nextRemaining);
 
         if (a !== b) {
-          backtrack(
-            [[b, a]],
-            remaining.filter((_, index) => index !== i)
-          );
+          backtrack([[b, a]], nextRemaining);
         }
 
       } else {
 
-        // Domino normale
-        if (last[1] === a) {
+        const last = chain[chain.length - 1];
 
-          backtrack(
-            [...chain, [a, b]],
-            remaining.filter((_, index) => index !== i)
-          );
+        // Normale
+        if (last[1] === a) {
+          backtrack([...chain, [a, b]], nextRemaining);
         }
 
-        // Domino girato
-        if (last[1] === b) {
-
-          backtrack(
-            [...chain, [b, a]],
-            remaining.filter((_, index) => index !== i)
-          );
+        // Girato
+        if (last[1] === b && a !== b) {
+          backtrack([...chain, [b, a]], nextRemaining);
         }
       }
     }
   }
 
-  backtrack([], []);
+  backtrack([], dominoes);
 
   return longest;
 }
 
+console.log(getLongestChain([[1, 2], [4, 5], [2, 3]]));
+console.log(getLongestChain([[2, 1], [4, 3], [5, 3]]));
+console.log(getLongestChain([[1, 2], [3, 4], [2, 3], [4, 0]]));
 //*
 
 //todo Valutazione al MIO codice proposta da ChatGpt
