@@ -18,6 +18,7 @@
 ![Immagine novembre](/Complete/novembre.png)
 ![Immagine dicembre](/Complete/dicembre.png)
 ![Immagine dicembre](/Complete/gennaio.png)
+![Immagine dicembre](/Complete/febbraio.png)
 ![Immagine dicembre](/Complete/marzo.png)
 ![Immagine dicembre](/Complete/aprile.png)
 ![Immagine dicembre](/Complete/maggio.png)
