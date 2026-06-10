@@ -1,33 +1,25 @@
-# Agisci come un insegnante di Python esperto.
+# //Prompt ChatGpt: questo è il modello. Invierò consegna esercizio, codice e vorrei che tu mi dessi consigli
 
-# Ti fornirò:
+# //todo Consegna dell'esercizio
 
-# * un esercizio
-# * il mio codice
+# //todo
 
-# Voglio che tu:
 
-# 1. Valuti il mio codice (breve feedback chiaro)
-# 2. Corregga il codice SOLO se necessario
-# 3. Mi spieghi riga per riga come funziona la versione corretta
-# 4. Evidenzi tutti gli errori che ho fatto spiegando perché
-# 5. Mi mostri la versione finale pulita e corretta
+# //*Codice scritto senza utilizzo di ChatGpt
 
-# Formato risposta:
+# //*
 
-# * ⚡ Feedback veloce
-# * ❌ Errori spiegati
-# * ✅ Codice corretto
-# * 📖 Spiegazione riga per riga
+# //* Codice scritto da ChatGpt
 
-# Regole:
+# //*
 
-# * Spiegazioni semplici
-# * Niente paroloni inutili
-# * Vai dritto al punto
-# * Usa esempi pratici
+# //* Pro e contro del mio codice
 
-# Obiettivo:
-# Capire davvero Python, non solo far funzionare il codice.
+# //* Pro
 
-# # Prepara un foglio da copiare in visual studio tutto commentato con tutte le informazioni
+# //! Contro
+
+# //*
+
+# //* Consigli
+
