@@ -1,14 +1,52 @@
-﻿'''
-Dato un numero intero che rappresenta il numero di candele con cui inizi e un numero intero che rappresenta il numero di candele bruciate necessarie per crearne una nuova, restituisci il numero di candele che avrai utilizzato dopo averne create e bruciate il maggior numero possibile.
+﻿# //todo Consegna dell'esercizio
+# Dato un numero intero che rappresenta il numero di candele iniziali e un numero intero che rappresenta quante candele bruciate servono per crearne una nuova,
+# restituisci il numero totale di candele utilizzate dopo averne create e bruciate il maggior numero possibile.
 
-Ad esempio, se ti vengono fornite 7 candele e ne servono 2 bruciate per crearne una nuova:
-Brucia 7 candele per ottenere 7 avanzi,
-Ricicla 6 avanzi in 3 nuove candele (ne rimane 1),
-Brucia 3 candele per ottenere altre 3 avanzi (4 in totale),
-Ricicla 4 avanzi in 2 nuove candele,
-Brucia 2 candele per ottenere 2 avanzi,
-Ricicla 2 avanzi in 1 nuova candela,
-Brucia 1 candela.
-In questo esempio avrai bruciato 13 candele in totale.
-'''
+# Esempio:
+# burn_candles(7, 2) → 13
 
+
+# //* Codice scritto senza utilizzo di ChatGPT
+def burn_candles(candles, leftovers_needed):
+
+    burned = candles;
+    leftovers = candles;
+
+    while leftovers >= leftovers_needed:
+        newCandles = leftovers // leftovers_needed;
+        burned += newCandles
+        leftovers = leftovers % leftovers_needed + newCandles
+
+    return burned
+
+
+# //* Codice scritto da ChatGPT (correzione)
+def burn_candles_correct(candles, leftovers_needed):
+    burned = 0
+    leftovers = candles
+
+    while leftovers >= leftovers_needed:
+        new_candles = leftovers // leftovers_needed
+        burned += leftovers_needed * new_candles
+        leftovers = (leftovers % leftovers_needed) + new_candles
+
+    burned += leftovers
+    return burned
+
+
+# //* Pro e contro del mio codice
+
+# //* Pro
+# - Hai impostato bene il ciclo while
+# - Uso corretto di // e %
+# - Buona intuizione sulla logica di riciclo
+
+# //! Contro
+# - Hai contato le nuove candele come se fossero già bruciate
+# - Confusione tra candele create e candele consumate
+# - Aggiornamento di leftovers non del tutto corretto
+
+# //* Consigli
+# - Separa sempre: bruciate vs create
+# - Conta solo ciò che viene effettivamente consumato
+# - Pensa al ciclo come: brucio → riciclo → ripeto
