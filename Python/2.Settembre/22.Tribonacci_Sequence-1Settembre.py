@@ -14,43 +14,43 @@
 
 # # //*Codice scritto senza utilizzo di ChatGpt
 
-# def tribonacci_sequence(start_sequence, length):
-#     if length == 1:
-#         return [start_sequence[0]]
-#     elif length == 2:
-#         return [start_sequence[0], start_sequence[1]]
-#     elif length == 3:
-#         return start_sequence
-#     elif length == 0:
-#         return []
+def tribonacci_sequence(start_sequence, length):
+    if length == 1:
+        return [start_sequence[0]]
+    elif length == 2:
+        return [start_sequence[0], start_sequence[1]]
+    elif length == 3:
+        return start_sequence
+    elif length == 0:
+        return []
 
-#     Tribonacci_sequence = start_sequence.copy()
-#     indice = 2;
+    Tribonacci_sequence = start_sequence.copy()
+    indice = 2;
 
-#     for number in range(length - 3):
-#         Tribonacci_sequence.append(
-#             Tribonacci_sequence[indice]
-#             + Tribonacci_sequence[indice-1]
-#             + Tribonacci_sequence[indice-2]
-#         )
-#         indice += 1
+    for number in range(length - 3):
+        Tribonacci_sequence.append(
+            Tribonacci_sequence[indice]
+            + Tribonacci_sequence[indice-1]
+            + Tribonacci_sequence[indice-2]
+        )
+        indice += 1
 
-#     return Tribonacci_sequence
+    return Tribonacci_sequence
 
 # # //*
 
 # # //* Codice scritto da ChatGpt
 
-# def tribonacci_sequence(start_sequence, length):
-#     if length == 0:
-#         return []
+def tribonacci_sequence(start_sequence, length):
+    if length == 0:
+        return []
 
-#     sequence = start_sequence[:length]
+    sequence = start_sequence[:length]
 
-#     while len(sequence) < length:
-#         sequence.append(sequence[-1] + sequence[-2] + sequence[-3])
+    while len(sequence) < length:
+        sequence.append(sequence[-1] + sequence[-2] + sequence[-3])
 
-#     return sequence
+    return sequence
 
 # # //*
 

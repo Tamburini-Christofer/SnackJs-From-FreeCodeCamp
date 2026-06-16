@@ -17,31 +17,31 @@
 
 # # //*Codice scritto senza utilizzo di ChatGpt
 
-# def is_pangram(sentence, letters):
-#     sentence_letters = [char for char in sentence.lower() if char.isalpha()]
+def is_pangram(sentence, letters):
+    sentence_letters = [char for char in sentence.lower() if char.isalpha()]
     
-#     clean_sentence = "".join(list(dict.fromkeys(sentence_letters)))
+    clean_sentence = "".join(list(dict.fromkeys(sentence_letters)))
 
-#     clean_letters = "".join(list(dict.fromkeys(letters.lower())))
+    clean_letters = "".join(list(dict.fromkeys(letters.lower())))
     
-#     return sorted(clean_sentence) == sorted(clean_letters)
+    return sorted(clean_sentence) == sorted(clean_letters)
 
-# print(is_pangram("hello", "hel"))
+print(is_pangram("hello", "hel"))
 
 # # //*
 
 # # //* Codice scritto da ChatGpt
 
-# def is_pangram(sentence, letters):
-#     sentence_set = {
-#         char.lower()
-#         for char in sentence
-#         if char.isalpha()
-#     }
+def is_pangram(sentence, letters):
+    sentence_set = {
+        char.lower()
+        for char in sentence
+        if char.isalpha()
+    }
 
-#     letters_set = set(letters.lower())
+    letters_set = set(letters.lower())
 
-#     return sentence_set == letters_set
+    return sentence_set == letters_set
 
 # # //*
 

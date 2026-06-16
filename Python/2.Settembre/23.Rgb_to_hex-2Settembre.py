@@ -20,31 +20,31 @@
 
 # # //*Codice scritto senza utilizzo di ChatGpt
 
-# def rgb_to_hex(rgb):
-#     extract_hex = rgb.replace("rgb","").replace("(", "").replace(")","").replace(",", "").split()
+def rgb_to_hex(rgb):
+    extract_hex = rgb.replace("rgb","").replace("(", "").replace(")","").replace(",", "").split()
 
-#     hex_convert = ""
+    hex_convert = ""
 
-#     for number in extract_hex:
-#         hex_convert += hex(int(number))[2:].zfill(2)
+    for number in extract_hex:
+        hex_convert += hex(int(number))[2:].zfill(2)
 
-#     return "#" + hex_convert
+    return "#" + hex_convert
 
-# print(rgb_to_hex("rgb(1, 11, 111)"))
+print(rgb_to_hex("rgb(1, 11, 111)"))
 
 # # //*
 
 # # //* Codice scritto da ChatGpt
 
-# def rgb_to_hex(rgb):
-#     values = rgb[4:-1].split(", ")
+def rgb_to_hex(rgb):
+    values = rgb[4:-1].split(", ")
 
-#     hex_color = "#"
+    hex_color = "#"
 
-#     for value in values:
-#         hex_color += format(int(value), "02x")
+    for value in values:
+        hex_color += format(int(value), "02x")
 
-#     return hex_color
+    return hex_color
 
 # # //*
 

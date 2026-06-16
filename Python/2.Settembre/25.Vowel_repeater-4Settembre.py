@@ -22,42 +22,42 @@
 
 # # //*Codice scritto senza utilizzo di ChatGpt
 
-# import re
+import re
 
-# def repeat_vowels(s):
+def repeat_vowels(s):
 
-#     final_word = ""
-#     indice = 1;
+    final_word = ""
+    indice = 1;
 
-#     for char in s:
+    for char in s:
 
-#         if re.search(r"[aeiouAEIOU]",char):
-#             final_word += char * indice
-#             indice += 1
-#         else:
-#              final_word += char
+        if re.search(r"[aeiouAEIOU]",char):
+            final_word += char * indice
+            indice += 1
+        else:
+             final_word += char
              
-#     return final_word
+    return final_word
 
-# print(repeat_vowels("I like eating ice cream in Iceland"))
+print(repeat_vowels("I like eating ice cream in Iceland"))
 
 # # //*
 
 # # //* Codice scritto da ChatGpt
 
-# def repeat_vowels(s):
-#     vowels = "aeiouAEIOU"
-#     result = ""
-#     count = 1
+def repeat_vowels(s):
+    vowels = "aeiouAEIOU"
+    result = ""
+    count = 1
 
-#     for char in s:
-#         if char in vowels:
-#             result += char + char.lower() * (count - 1)
-#             count += 1
-#         else:
-#             result += char
+    for char in s:
+        if char in vowels:
+            result += char + char.lower() * (count - 1)
+            count += 1
+        else:
+            result += char
 
-#     return result
+    return result
 
 # # //*
 
