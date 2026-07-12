@@ -26,3 +26,4 @@
 
 ![Immagine agosto Python](/Complete/agosto_Python.png)
 ![Immagine settembre Python](/Complete/settembre_Python.png)
+![Immagine settembre Python](/Complete/ottobre_Python.png)
